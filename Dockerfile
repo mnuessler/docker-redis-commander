@@ -1,7 +1,9 @@
 FROM google/nodejs
-MAINTAINER Matthias Nüßler <m.nuessler@web.de> 
+MAINTAINER Matthias Nüßler <m.nuessler@web.de>
 
-RUN npm install -g redis-commander
+WORKDIR /app
+RUN git clone https://github.com/mnuessler/redis-commander.git /app && \
+    git checkout proxy
+RUN npm install
 
-ENTRYPOINT ["redis-commander"]
-
+ENTRYPOINT ["node", "bin/redis-commander.js"]
