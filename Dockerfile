@@ -1,4 +1,4 @@
-FROM google/nodejs
+FROM node:5
 MAINTAINER Matthias Nüßler <m.nuessler@web.de>
 
 WORKDIR /app

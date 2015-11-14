@@ -1,0 +1,11 @@
+redis:
+  image: redis
+
+redis-commander:
+  build: .
+  links:
+    - redis
+  ports:
+    - "8081:8081"
+  command: --port 8081 --redis-host redis
+
